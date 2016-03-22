@@ -4,6 +4,11 @@ Template.Recipes.onCreated(function() {
     self.subscribe('recipes');
   });
 });
+Template.Recipes.events({
+  'click .new-recipe': ()=> {
+    Session.set('newRecipe', true);
+  }
+});
 
 Template.Recipes.helpers({
   recipes: ()=> {
